@@ -53,9 +53,11 @@ The `Customer` class represents a coffee shop customer.
 - `create_order(coffee, price)`: Creates a new Order for this customer
 - `most_aficionado(coffee)` (class method): Returns the Customer who spent the most on a specific coffee
 
+```bash
 customer = Customer("Alice")
 coffee = Coffee("Espresso")
 order = customer.create_order(coffee, 3.5)
+```
 
 ### Coffee Class
 
@@ -72,11 +74,11 @@ The `Coffee` class represents a type of coffee available in the shop.
 - `average_price()`: Returns the average price of this coffee based on its orders
 
 #### Example:
-\`\`\`python
-coffee = Coffee("Latte")
+```bash
 coffee = Coffee("Latte")
 customers = coffee.customers()
 avg_price = coffee.average_price()
+```
 The `Order` class represents a purchase of a coffee by a customer.
 
 #### Attributes:
@@ -90,76 +92,94 @@ The `Order` class represents a purchase of a coffee by a customer.
 - Price must be a number between 1.0 and 10.0
 
 #### Example:
-\`\`\`python
+```bash
 order = Order(customer, coffee, 4.5)
-\`\`\`
+```
 
 ## Usage Examples
+```bash
 order = Order(customer, coffee, 4.5)
 from customer import Customer
 from coffee import Coffee
 from order import Order
+```
 
 # Create customers and coffees
+```bash
 alice = Customer("Alice")
 bob = Customer("Bob")
 espresso = Coffee("Espresso")
 from customer import Customer
 from coffee import Coffee
 from order import Order
+```
 
 # Create customers and coffees
+```bash
 alice = Customer("Alice")
 bob = Customer("Bob")
 espresso = Coffee("Espresso")
 latte = Coffee("Latte")
-
+```
 # Create orders
+```bash
 alice.create_order(espresso, 3.5)
 alice.create_order(latte, 4.5)
 bob.create_order(espresso, 3.0)
-
+```
 # Get all coffees ordered by Alice
+```bash
 alice_coffees = alice.coffees()
 print([coffee.name for coffee in alice_coffees])  # ['Espresso', 'Latte']
+```
 
 # Get average price of Espresso
+```bash
 avg_price = espresso.average_price()
 print(f"Average Espresso price: ${avg_price:.2f}")
+```
 
 # Find the biggest Espresso aficionado
+```bash
 aficionado = Customer.most_aficionado(espresso)
 print(f"Biggest Espresso fan: {aficionado.name}")
+```
+
 ## Testing
 
 ### Running Tests
 
+
 To run all tests:
 
-\`\`\`bash
+```bash
 python debug.py
 For more detailed output:
 
-\`\`\`bash
+```bash
 pytest -v
-\`\`\`
+```
 
 To run tests for a specific class:
-
-\`\`\`bash
+```bash
 pytest
+```
 ### Test Coverage
 
 The test suite provides comprehensive coverage of:
 - Initialization with valid and invalid parameters
 - Property getters and setters
+```bash
 pytest -v
+```
 
 ## Validation Rules
 
 The domain model enforces the following validation rules:
 
+```bash
 pytest tests/test_customer.py
+```
 
 2. **Coffee**:
    - Name must be a string
