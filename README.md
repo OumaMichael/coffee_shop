@@ -154,9 +154,6 @@ To run all tests:
 
 ```bash
 python debug.py
-For more detailed output:
-
-```bash
 pytest -v
 ```
 
@@ -169,6 +166,8 @@ pytest
 The test suite provides comprehensive coverage of:
 - Initialization with valid and invalid parameters
 - Property getters and setters
+- Methods for creating orders and getting coffees
+
 ```bash
 pytest -v
 ```
