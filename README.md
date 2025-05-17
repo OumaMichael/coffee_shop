@@ -37,23 +37,6 @@ This project implements a comprehensive domain model for a Coffee Shop using obj
    pipenv install pytest
    \`\`\`
 
-## Project Structure
-
-\`\`\`
-coffee_shop/
-├── customer.py         # Customer class implementation
-├── coffee.py           # Coffee class implementation
-├── order.py            # Order class implementation
-├── debug.py            # Debug script for testing functionality
-├── tests/
-│   ├── __init__.py
-│   ├── test_customer.py
-│   ├── test_coffee.py
-│   └── test_order.py
-├── pytest.ini          # Pytest configuration
-└── README.md           # This file
-\`\`\`
-
 ## Class Documentation
 
 ### Customer Class
