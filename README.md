@@ -21,21 +21,21 @@ This project implements a comprehensive domain model for a Coffee Shop using obj
 ### Setup
 
 1. Clone the repository:
-   \`\`\`bash
+   ```bash
    git clone https://github.com/OumaMichael/coffee_shop
    cd coffee_shop
-   \`\`\`
+   ```
 
 2. Create and activate a virtual environment:
-   \`\`\`bash
+   ```bash
    pipenv install
    pipenv shell
-   \`\`\`
+   ```
 
 3. Install development dependencies:
-   \`\`\`bash
+   ```bash
    pipenv install pytest
-   \`\`\`
+   ```
 
 ## Class Documentation
 
@@ -53,12 +53,9 @@ The `Customer` class represents a coffee shop customer.
 - `create_order(coffee, price)`: Creates a new Order for this customer
 - `most_aficionado(coffee)` (class method): Returns the Customer who spent the most on a specific coffee
 
-#### Example:
-\`\`\`python
 customer = Customer("Alice")
 coffee = Coffee("Espresso")
 order = customer.create_order(coffee, 3.5)
-\`\`\`
 
 ### Coffee Class
 
@@ -77,12 +74,9 @@ The `Coffee` class represents a type of coffee available in the shop.
 #### Example:
 \`\`\`python
 coffee = Coffee("Latte")
+coffee = Coffee("Latte")
 customers = coffee.customers()
 avg_price = coffee.average_price()
-\`\`\`
-
-### Order Class
-
 The `Order` class represents a purchase of a coffee by a customer.
 
 #### Attributes:
@@ -101,10 +95,15 @@ order = Order(customer, coffee, 4.5)
 \`\`\`
 
 ## Usage Examples
+order = Order(customer, coffee, 4.5)
+from customer import Customer
+from coffee import Coffee
+from order import Order
 
-### Basic Usage
-
-\`\`\`python
+# Create customers and coffees
+alice = Customer("Alice")
+bob = Customer("Bob")
+espresso = Coffee("Espresso")
 from customer import Customer
 from coffee import Coffee
 from order import Order
@@ -131,16 +130,6 @@ print(f"Average Espresso price: ${avg_price:.2f}")
 # Find the biggest Espresso aficionado
 aficionado = Customer.most_aficionado(espresso)
 print(f"Biggest Espresso fan: {aficionado.name}")
-\`\`\`
-
-### Running the Debug Script
-
-The project includes a debug script that demonstrates all functionality:
-
-\`\`\`bash
-python debug.py
-\`\`\`
-
 ## Testing
 
 ### Running Tests
@@ -148,9 +137,7 @@ python debug.py
 To run all tests:
 
 \`\`\`bash
-pytest
-\`\`\`
-
+python debug.py
 For more detailed output:
 
 \`\`\`bash
@@ -160,25 +147,19 @@ pytest -v
 To run tests for a specific class:
 
 \`\`\`bash
-pytest tests/test_customer.py
-\`\`\`
-
+pytest
 ### Test Coverage
 
 The test suite provides comprehensive coverage of:
 - Initialization with valid and invalid parameters
 - Property getters and setters
-- Relationship methods
-- Aggregate and association methods
-- Edge cases and error handling
+pytest -v
 
 ## Validation Rules
 
 The domain model enforces the following validation rules:
 
-1. **Customer**:
-   - Name must be a string
-   - Name must be between 1 and 15 characters
+pytest tests/test_customer.py
 
 2. **Coffee**:
    - Name must be a string
